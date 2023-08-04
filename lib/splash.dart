@@ -4,6 +4,11 @@ import 'package:flutter/material.dart';
 class Splashscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
+    Future.delayed(Duration(seconds: 2), () {
+      Navigator.pushReplacementNamed(context, '/welcome');
+    });
+
     return Column(
       children: [
         Container(
@@ -22,7 +27,7 @@ class Splashscreen extends StatelessWidget {
                 height: 396,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: NetworkImage("https://via.placeholder.com/395x396"),
+                    image: AssetImage('assets/images/glabs1.png'),
                     fit: BoxFit.fill,
                   ),
                 ),
@@ -31,6 +36,7 @@ class Splashscreen extends StatelessWidget {
               Text(
                 '© Ghazali Labs 2023',
                 style: TextStyle(
+                  decoration: TextDecoration.none,
                   color: Colors.white,
                   fontSize: 12,
                   fontFamily: 'Inter',
